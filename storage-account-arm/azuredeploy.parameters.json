@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+
+  "contentVersion": "1.0.0.0",
+
+  "parameters": {
+    "storageName": {
+     "value": "strarmtempazdemo006",
+     "metadata": {
+        "description": "The name of the Azure storage account"
+        }
+        },
+
+    
+    "storageSKU": {
+        "value": "Standard_LRS",
+        "metadata": {
+        "description": "The SKU os the storage account"
+        }
+      }
+    }
+
+
+    
+}
