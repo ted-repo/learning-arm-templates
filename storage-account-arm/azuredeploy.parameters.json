@@ -4,8 +4,8 @@
   "contentVersion": "1.0.0.0",
 
   "parameters": {
-    "storageName": {
-     "value": "strarmtempazdemo006",
+    "storageNamePrefix": {
+     "value": "strarmt",
      "metadata": {
         "description": "The name of the Azure storage account"
         }

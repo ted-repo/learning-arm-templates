@@ -4,7 +4,7 @@
   "contentVersion": "1.0.0.0",
   
   "parameters": {
-    "storageName": {
+    "storageNamePrefix": {
      "type": "string",
      "minLength": 3,
      "maxLength": 24
@@ -28,15 +28,15 @@
   "functions": [],
 
   "variables": {
-    
+    "storageName": "[concat(toLower(parameters('storageNamePrefix')), uniqueString(resourceGroup().id))]"
   },
 
   "resources": [{
-    "name": "[parameters('storageName')]",
+    "name": "[variables('storageName')]",
     "type": "Microsoft.Storage/storageAccounts",
     "apiVersion": "2021-04-01",
     "tags": {
-      "displayName": "[parameters('storageName')]",
+      "displayName": "[variables('storageName')]",
       "env": "demo"
     },
     "location": "[resourceGroup().location]",
@@ -53,7 +53,7 @@
   "outputs": {
     "storageEndpoint": {
       "type": "object",
-      "value": "[reference(parameters('storageName')).primaryEndpoints]"
+      "value": "[reference(variables('storageName')).primaryEndpoints]"
     }
   }
 }
